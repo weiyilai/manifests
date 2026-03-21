@@ -129,7 +129,7 @@ spec:
         {{- end }}
         {{- end }}
         {{- if .Values.config.cookieName }}
-          - --cookie-name={{ tpl .Values.config.cookieName . }}
+          - --cookie-name={{ tpl .Values.config.cookieName $ }}
         {{- end }}
         {{- if kindIs "map" .Values.extraArgs }}
           {{- range $key, $value := .Values.extraArgs }}

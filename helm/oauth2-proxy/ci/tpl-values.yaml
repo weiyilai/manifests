@@ -14,6 +14,7 @@ oauth2-proxy:
   checkDeprecation: false
   config:
     clientSecret: '{{ $.Release.Name }}'
+    cookieName: '{{ $.Release.Name }}'
     configFile: |
       oidc_issuer_url = "https://{{ $.Release.Name }}/dex"
 
@@ -60,3 +61,6 @@ serviceAccount:
 serviceMonitor:
   annotations:
     test-annotations/test: "{{ $.Release.Name }}"
+
+customLabels:
+  test-labels/test: "{{ $.Release.Name }}"
